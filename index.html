@@ -64,6 +64,15 @@
         </ul>
 
         <script src="js/main.js"></script>
+        <script src="js/weather.js">
+        </script>
+        <script>
+            updateTime(); // Update time and date immediately after the page loads
+            updateGoogleCalendarIcon();
+            setInterval(updateTime, 1000); // Update time and date every second
+            updateWeather();
+            setInterval(updateWeather, 300000); // Update weather every 5 minutes
+        </script>
 </body>
 
 </html>
