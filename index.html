@@ -9,6 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen'
         href='https://use.fontawesome.com/releases/v5.15.3/css/all.css'>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/create_panel_popup.css">
 
 </head>
 
@@ -27,52 +28,46 @@
         <div id="date"></div>
     </div>
 
-    <div id="links">
-        <a class="neu-btn" href="https://calendar.google.com/calendar/u/0/r">
-            <img id="google_calendar" src="https://svgshare.com/i/RAU.svg#d01" alt="Day 01">
-            Календарь
-        </a>
-        <a class="neu-btn" href="https://vk.com/im">
-            <img src="https://shareshortcuts.com/iconCache/5813c93ba1b944008f6d1c44b9c8855c.png" alt="Вк мессенджер">
-            Messenger
-        </a>
-        <a class="neu-btn" href="https://translate.yandex.ru/">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Yandex_Translate_icon.svg/1200px-Yandex_Translate_icon.svg.png"
-                alt="Яндекс переводчик">
-            Переводчик
-        </a>
-        <a class="neu-btn" href="https://chat.openai.com/">
-            <img src="https://ww1.freelogovectors.net/wp-content/uploads/2023/01/chatgpt-logo-freelogovectors.net_.png"
-                alt="ChatGPT">
-            ChatGPT
-        </a>
-        <!-- Add your own links with images here -->
+    <div id="links"></div>
+
+    <!-- Кнопка настроек -->
+    <div id="settings-button" onclick="toggleSettingsMenu()">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <!-- Всплывающее меню настроек -->
+    <ul id="settings-menu">
+        <li onclick="createPanel()"><i class="fas fa-plus"></i> Добавить</li>
+        <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
+        <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
+        <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
+        <!-- Добавьте другие пункты меню, если необходимо -->
+    </ul>
+
+    <div id="add-panel-popup">
+        <h2>Add Panel</h2>
+        <input type="text" id="panelIdInput" placeholder="Panel Id">
+        <input type="text" id="panelNameInput" placeholder="Panel Name">
+        <input type="text" id="panelImageInput" placeholder="Panel Image URL">
+        <input type="text" id="panelUrlInput" placeholder="Panel URL">
+        <button onclick="addNewPanel()">Add</button>
+        <button onclick="closePanelPopup()">Cancel</button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="src/config/panel_config.js"></script>
+    <script>
+        generatePanels();
+        updateTime(); // Update time and date immediately after the page loads
+        updateGoogleCalendarIcon();
+        setInterval(updateTime, 1000); // Update time and date every second
+        updateWeather();
+        setInterval(updateWeather, 300000); // Update weather every 5 minutes
+    </script>
 
 
-        <!-- Кнопка настроек -->
-        <div id="settings-button" onclick="toggleSettingsMenu()">
-            <i class="fas fa-cog"></i>
-        </div>
-
-        <!-- Всплывающее меню настроек -->
-        <ul id="settings-menu">
-            <li onclick="openEditor()"><i class="fas fa-plus"></i> Добавить</li>
-            <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
-            <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
-            <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
-            <!-- Добавьте другие пункты меню, если необходимо -->
-        </ul>
-
-        <script src="js/main.js"></script>
-        <script src="js/weather.js">
-        </script>
-        <script>
-            updateTime(); // Update time and date immediately after the page loads
-            updateGoogleCalendarIcon();
-            setInterval(updateTime, 1000); // Update time and date every second
-            updateWeather();
-            setInterval(updateWeather, 300000); // Update weather every 5 minutes
-        </script>
 </body>
 
 </html>

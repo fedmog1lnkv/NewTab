@@ -1,0 +1,33 @@
+/* Add this CSS for the pop-up window */
+#add-panel-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #c9d1d9, -3px -3px 6px #ffffff;
+    z-index: 9999;
+}
+
+#add-panel-popup h2 {
+    margin-bottom: 10px;
+}
+
+#add-panel-popup input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+#add-panel-popup button {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#add-panel-popup button:last-child {
+    margin-right: 0;
+}
