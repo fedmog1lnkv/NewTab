@@ -1,0 +1,149 @@
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background: url('anime.mp4');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.bgvideo {
+    top: 50px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -9999;
+}
+
+/* Neumorphism styles */
+.neu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    color: #555;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px #c9d1d9, -6px -6px 10px #ffffff;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.neu-btn:hover {
+    box-shadow: 4px 4px 6px #c9d1d9, -4px -4px 6px #ffffff;
+}
+
+.neu-btn img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #555;
+    height: 50px;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+#weather {
+    display: flex;
+    align-items: center;
+}
+
+#temperature {
+    margin-left: 10px;
+    /* Add some spacing between date and temperature */
+    color: #555;
+    cursor: pointer;
+    /* Updated font color */
+}
+
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+#weather_icon {
+    height: 20px;
+}
+
+#settings-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    color: #555;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px #c9d1d9, -3px -3px 6px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#settings-button:hover {
+    background-color: #ddd;
+}
+
+#settings-menu {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #c9d1d9, -3px -3px 6px #ffffff;
+    list-style: none;
+}
+
+#settings-menu {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #c9d1d9, -3px -3px 6px #ffffff;
+    list-style: none;
+}
+
+#settings-menu li {
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+#settings-menu li:hover {
+    background-color: #ddd;
+}
+
+#settings-menu i {
+    margin-right: 10px;
+}
