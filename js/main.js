@@ -90,5 +90,19 @@ function uploadFile() {
 }
 
 function downloadFile() {
-    // Ваш код для выполнения функции "Скачать"
+    const jsContent = "var panel_schema = " + localStorage.getItem('panel_config');
+    const blob = new Blob([jsContent], {
+        type: 'text/javascript'
+    });
+
+    const downloadLink = document.createElement('a');
+    downloadLink.href = URL.createObjectURL(blob);
+    downloadLink.download = 'panel_config.js'; // Specify the filename for the downloaded file
+
+    // Append the <a> element to the DOM and trigger the download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+
+    // Clean up by revoking the temporary URL after the download
+    URL.revokeObjectURL(downloadLink.href);
 }
