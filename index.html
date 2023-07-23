@@ -38,12 +38,13 @@
 
 
         <!-- Кнопка настроек -->
-        <div id="settings-button" onclick="toggleSettingsMenu()">
+        <div id="settings-button">
             <i class="fas fa-cog"></i>
         </div>
 
         <!-- Всплывающее меню настроек -->
-        <ul id="settings-menu">
+        <ul id="settings-menu" style="display: none;">
+            <!--TODO : remove onclick-->
             <li onclick="createPanel()"><i class="fas fa-plus"></i> Добавить</li>
             <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
             <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>

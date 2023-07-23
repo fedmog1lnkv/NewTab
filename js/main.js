@@ -114,3 +114,7 @@ setInterval(updateTime, 1000); // Update time and date every second
 updateWeather();
 setInterval(updateWeather, 300000); // Update weather every 5 minutes
 startSleepTimer();
+
+
+const settingsButton = document.getElementById('settings-button');
+settingsButton.addEventListener('click', toggleSettingsMenu)
