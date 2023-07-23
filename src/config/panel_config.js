@@ -24,5 +24,10 @@ var panel_schema = {
         "name": "Music",
         "image": "https://rossaprimavera.ru/static/files/52c887278299.jpg",
         "url": "https://music.yandex.ru/"
+    }, {
+        "id": "-",
+        "name": "GitHub",
+        "image": "https://www.svgrepo.com/show/494307/github-rounded.svg",
+        "url": "https://github.com/fedmog1lnkv/"
     }]
 }

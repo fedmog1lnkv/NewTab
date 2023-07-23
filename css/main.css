@@ -23,6 +23,12 @@ body {
     z-index: -9999;
 }
 
+.slideUp {
+    top: 0px;
+    animation: slideUpAnimation 0.5s ease-out;
+
+}
+
 /* Neumorphism styles */
 .neu-btn {
     display: flex;
@@ -75,11 +81,18 @@ body {
     /* Updated font color */
 }
 
+#container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 #links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 20px;
+    max-width: 600px;
 }
 
 #weather_icon {
@@ -145,4 +158,24 @@ body {
 
 #settings-menu i {
     margin-right: 10px;
+}
+
+.fade-out-element {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    /* Длительность 0.5 секунды и эффект ease-out */
+}
+
+.fade-out-element.hidden {
+    opacity: 0;
+}
+
+@keyframes slideUpAnimation {
+    from {
+        top: 50px;
+    }
+
+    to {
+        top: 0;
+    }
 }

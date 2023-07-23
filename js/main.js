@@ -106,3 +106,11 @@ function downloadFile() {
     // Clean up by revoking the temporary URL after the download
     URL.revokeObjectURL(downloadLink.href);
 }
+
+generatePanels();
+updateTime(); // Update time and date immediately after the page loads
+updateGoogleCalendarIcon();
+setInterval(updateTime, 1000); // Update time and date every second
+updateWeather();
+setInterval(updateWeather, 300000); // Update weather every 5 minutes
+startSleepTimer();

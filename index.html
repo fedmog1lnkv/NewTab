@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'nonce-randomString'">
     <title>New Tab</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel='stylesheet' type='text/css' media='screen'
@@ -19,54 +20,50 @@
         </source>
     </video>
 
-    <div id="header">
-        <div id="weather">
-            <div id="temperature" onclick="updateWeather()"></div>
+    <div id="main" class="fade-out-element">
+        <div id="header">
+            <div id="weather">
+                <div id="temperature" onclick="updateWeather()"></div>
+            </div>
+            <div id="time"></div>
+
+            <div id="date"></div>
         </div>
-        <div id="time"></div>
+        <div id="container">
+            <div id="links"></div>
+        </div>
 
-        <div id="date"></div>
+
+        <!-- Кнопка настроек -->
+        <div id="settings-button" onclick="toggleSettingsMenu()">
+            <i class="fas fa-cog"></i>
+        </div>
+
+        <!-- Всплывающее меню настроек -->
+        <ul id="settings-menu">
+            <li onclick="createPanel()"><i class="fas fa-plus"></i> Добавить</li>
+            <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
+            <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
+            <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
+            <!-- Добавьте другие пункты меню, если необходимо -->
+        </ul>
+
+        <div id="add-panel-popup">
+            <h2>Add Panel</h2>
+            <input type="text" id="panelIdInput" placeholder="Panel Id">
+            <input type="text" id="panelNameInput" placeholder="Panel Name">
+            <input type="text" id="panelImageInput" placeholder="Panel Image URL">
+            <input type="text" id="panelUrlInput" placeholder="Panel URL">
+            <button onclick="addNewPanel()">Add</button>
+            <button onclick="closePanelPopup()">Cancel</button>
+        </div>
     </div>
 
-    <div id="links"></div>
-
-    <!-- Кнопка настроек -->
-    <div id="settings-button" onclick="toggleSettingsMenu()">
-        <i class="fas fa-cog"></i>
-    </div>
-
-    <!-- Всплывающее меню настроек -->
-    <ul id="settings-menu">
-        <li onclick="createPanel()"><i class="fas fa-plus"></i> Добавить</li>
-        <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
-        <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
-        <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
-        <!-- Добавьте другие пункты меню, если необходимо -->
-    </ul>
-
-    <div id="add-panel-popup">
-        <h2>Add Panel</h2>
-        <input type="text" id="panelIdInput" placeholder="Panel Id">
-        <input type="text" id="panelNameInput" placeholder="Panel Name">
-        <input type="text" id="panelImageInput" placeholder="Panel Image URL">
-        <input type="text" id="panelUrlInput" placeholder="Panel URL">
-        <button onclick="addNewPanel()">Add</button>
-        <button onclick="closePanelPopup()">Cancel</button>
-    </div>
-
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script src="js/time.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/sleep_time.js"></script>
     <script src="src/config/panel_config.js"></script>
-    <script>
-        generatePanels();
-        updateTime(); // Update time and date immediately after the page loads
-        updateGoogleCalendarIcon();
-        setInterval(updateTime, 1000); // Update time and date every second
-        updateWeather();
-        setInterval(updateWeather, 300000); // Update weather every 5 minutes
-    </script>
-
 
 </body>
 

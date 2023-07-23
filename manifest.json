@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Название вашего расширения",
+    "version": "1.0",
+    "description": "Описание вашего расширения",
+    "icons": {
+      "16": "src/icons/icon16.png",
+      "48": "src/icons/icon48.png",
+      "128": "src/icons/icon128.png"
+    },
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+      },
+    "permissions": [
+        "activeTab"
+    ]
+  }
