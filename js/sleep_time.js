@@ -16,8 +16,6 @@ function sleep() {
     console.log('Функция запущена после бездействия мыши в течение 1 минуты');
     mainDiv.classList.add('hidden');
     bgVideo.classList.add('slideUp');
-
-
 }
 
 function unSleep() {
