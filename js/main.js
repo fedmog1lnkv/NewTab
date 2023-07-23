@@ -107,6 +107,16 @@ function downloadFile() {
     URL.revokeObjectURL(downloadLink.href);
 }
 
+function preloadAnimations() {
+    let items = document.querySelectorAll('.preload');
+    setTimeout(() => {
+        items.forEach(element => {
+            element.classList.remove('preload');
+        });
+    }, 500);
+}
+
+preloadAnimations();
 generatePanels();
 updateTime(); // Update time and date immediately after the page loads
 updateGoogleCalendarIcon();

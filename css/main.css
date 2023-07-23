@@ -11,6 +11,11 @@ body {
     background-repeat: no-repeat;
 }
 
+.preload, .preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
 
 .bgvideo {
     top: 50px;
@@ -70,16 +75,20 @@ body {
 
 #weather {
     display: flex;
-    width: 10%;
-    align-items: center;
+    width: 120px;
+    align-items: start;
+    justify-content: start;
 }
 
 #temperature {
     margin-left: 10px;
-    /* Add some spacing between date and temperature */
     color: #555;
     cursor: pointer;
-    /* Updated font color */
+}
+
+#date {
+    width: 120px;
+    text-align: end;
 }
 
 #container {
