@@ -21,12 +21,12 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -9999;
+    animation: slideDownAnimation 0.5s ease-out;
 }
 
 .slideUp {
     top: 0px;
     animation: slideUpAnimation 0.5s ease-out;
-
 }
 
 /* Neumorphism styles */
@@ -70,6 +70,7 @@ body {
 
 #weather {
     display: flex;
+    width: 10%;
     align-items: center;
 }
 
@@ -177,5 +178,15 @@ body {
 
     to {
         top: 0;
+    }
+}
+
+@keyframes slideDownAnimation {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 50px;
     }
 }
