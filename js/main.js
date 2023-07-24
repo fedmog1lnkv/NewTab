@@ -19,3 +19,12 @@ startSleepTimer();
 
 const settingsButton = document.getElementById('settings-button');
 settingsButton.addEventListener('click', toggleSettingsMenu)
+
+const openAddPanelButton = document.getElementById('addPanel');
+openAddPanelButton.addEventListener('click', createPanel)
+
+const addPanelButton = document.getElementById('addNewPanel');
+addPanelButton.addEventListener('click', addNewPanel)
+
+const closePanelPopupButton = document.getElementById('closePanelPopup');
+closePanelPopupButton.addEventListener('click', closePanelPopup);

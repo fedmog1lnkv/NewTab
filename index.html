@@ -72,7 +72,7 @@
         <!-- Всплывающее меню настроек -->
         <ul id="settings-menu" style="display: none;">
             <!--TODO : remove onclick-->
-            <li onclick="createPanel()"><i class="fas fa-plus"></i> Добавить</li>
+            <li id="addPanel"><i class="fas fa-plus"></i> Добавить</li>
             <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
             <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
             <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
@@ -85,8 +85,8 @@
             <input type="text" id="panelNameInput" placeholder="Panel Name">
             <input type="text" id="panelImageInput" placeholder="Panel Image URL">
             <input type="text" id="panelUrlInput" placeholder="Panel URL">
-            <button onclick="addNewPanel()">Add</button>
-            <button onclick="closePanelPopup()">Cancel</button>
+            <button id="addNewPanel">Add</button>
+            <button id="closePanelPopup">Cancel</button>
         </div>
     </div>
 
