@@ -171,3 +171,23 @@ dateDiv.addEventListener('mouseleave', hideDatepickerWithDelay);
 const datepickerPopup = document.getElementById('datepicker-popup');
 datepickerPopup.addEventListener('mouseenter', cancelHideDatepicker);
 datepickerPopup.addEventListener('mouseleave', hideDatepickerWithDelay);
+
+const openGoogleCalendarYearButton = document.getElementById('openGoogleCalendarYear');
+openGoogleCalendarYearButton.addEventListener('click', () => {
+    window.location.href = 'https://calendar.google.com/calendar/u/0/r/year';
+});
+
+const openGoogleCalendarMonthButton = document.getElementById('openGoogleCalendarMonth');
+openGoogleCalendarMonthButton.addEventListener('click', () => {
+    window.location.href = 'https://calendar.google.com/calendar/u/0/r/month';
+});
+
+const openGoogleCalendarWeekButton = document.getElementById('openGoogleCalendarWeek');
+openGoogleCalendarWeekButton.addEventListener('click', () => {
+    window.location.href = 'https://calendar.google.com/calendar/u/0/r/week';
+});
+
+const openGoogleCalendarDayButton = document.getElementById('openGoogleCalendarDay');
+openGoogleCalendarDayButton.addEventListener('click', () => {
+    window.location.href = 'https://calendar.google.com/calendar/u/0/r/day';
+});
