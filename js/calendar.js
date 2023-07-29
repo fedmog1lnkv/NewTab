@@ -31,7 +31,10 @@ function generateCalendar(year, month) {
         if (!allDaysAdded) {
             if (i >= startDayOfWeek) {
                 dateElement.textContent = dayOfMonth;
-                dateElement.addEventListener('click', () => selectDate(dayOfMonth));
+                const day = dayOfMonth;
+
+                dateElement.addEventListener('click', () => selectDate(day, month, year));
+
                 dayOfMonth++;
                 if (dayOfMonth > daysInMonth) {
                     allDaysAdded = true;
@@ -40,11 +43,15 @@ function generateCalendar(year, month) {
                 dateElement.classList.add('faded');
                 const prevMonthDays = daysInMonth - startDayOfWeek + i + 1;
                 dateElement.textContent = prevMonthDays;
+                dateElement.addEventListener('click', () => selectDate(prevMonthDays, month - 1, year));
+
             }
         } else {
             const nextMonthDays = dayOfMonth - daysInMonth;
             dateElement.classList.add('faded');
             dateElement.textContent = nextMonthDays;
+            dateElement.addEventListener('click', () => selectDate(nextMonthDays, month + 1, year));
+
             dayOfMonth++;
         }
 
@@ -62,6 +69,10 @@ function generateCalendar(year, month) {
     });
 }
 
+function selectDate(day, month, year) {
+    // https: //calendar.google.com/calendar/u/0/r/day/2023/8/6
+    window.location.href = `https://calendar.google.com/calendar/u/0/r/day/${year}/${month+1}/${day}`;
+}
 
 
 function getCurrentMonthAndYear() {
