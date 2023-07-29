@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/create_panel_popup.css">
     <link rel="stylesheet" href="css/sleep_clock.css">
+    <link rel="stylesheet" href="css/calendar.css">
 
 </head>
 
@@ -50,18 +51,40 @@
         </source>
     </video>
 
+
+
     <div id="main" class="fade-out-element">
         <div id="header">
             <div id="weather">
-                <div id="temperature" onclick="updateWeather()"></div>
+                <div id="temperature"></div>
             </div>
             <div id="time"></div>
 
             <div id="date"></div>
+
+
         </div>
+
+        <div id="datepicker-popup" class="datepicker" style="display: none;">
+            <div class="datepicker-top">
+                <div class="btn-group">
+                    <button class="tag">
+                        Open Google calendar
+                    </button>
+                </div>
+                <div class="month-selector">
+                    <button class="arrow" id="prevMonth"><i class=" material-icons">chevron_left</i></button>
+                    <span class="month-name" id="currentMonth">December 2020</span>
+                    <button class="arrow" id="nextMonth"><i class="material-icons">chevron_right</i></button>
+                </div>
+            </div>
+            <div class="datepicker-calendar" id="calendar"></div>
+        </div>
+
         <div id="container">
             <div id="links"></div>
         </div>
+
 
 
         <!-- Кнопка настроек -->
@@ -74,6 +97,7 @@
             <!--TODO : remove onclick-->
             <li id="addPanel"><i class="fas fa-plus"></i> Добавить</li>
             <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
+            <!-- TODO : make advanced settings-->
             <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
             <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
             <!-- Добавьте другие пункты меню, если необходимо -->
@@ -95,6 +119,7 @@
     <script src="js/weather.js"></script>
     <script src="js/sleep_time.js"></script>
     <script src="js/generate_panels.js"></script>
+    <script src="js/calendar.js"></script>
     <script src="js/settings_menu.js"></script>
     <script src="src/config/panel_config.js"></script>
 

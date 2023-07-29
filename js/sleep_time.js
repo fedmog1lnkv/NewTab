@@ -9,7 +9,7 @@ function startSleepTimer() {
     unSleep();
 
     // Запускаем новый таймер, который вызовет вашу функцию через 1 минуту (60 секунд)
-    sleepTimer = setTimeout(sleep, 10000); // 60000 миллисекунд = 60 секунд
+    sleepTimer = setTimeout(sleep, 60000 * 5); // 60000 миллисекунд = 60 секунд
 }
 
 function sleep() {
