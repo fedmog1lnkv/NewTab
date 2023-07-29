@@ -18,8 +18,6 @@ function updateWeather() {
         });
 }
 
-
-
 function getGeolocation() {
     return new Promise((resolve, reject) => {
         // Проверяем, есть ли координаты в localStorage
