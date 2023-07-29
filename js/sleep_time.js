@@ -92,6 +92,6 @@ function updateNumber(element, number) {
         element.removeChild(element.firstElementChild)
     }, 990)
 }
-setInterval(updateClockSleep, 100)
 
+setInterval(updateClockSleep, 100)
 document.addEventListener('mousemove', startSleepTimer);

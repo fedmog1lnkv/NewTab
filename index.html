@@ -81,7 +81,6 @@
 
         <div id="add-panel-popup">
             <h2>Add Panel</h2>
-            <input type="text" id="panelIdInput" placeholder="Panel Id">
             <input type="text" id="panelNameInput" placeholder="Panel Name">
             <input type="text" id="panelImageInput" placeholder="Panel Image URL">
             <input type="text" id="panelUrlInput" placeholder="Panel URL">
@@ -90,13 +89,23 @@
         </div>
     </div>
 
-    <script src="js/main.js" defer></script>
+    <!-- Storage Import -->
+    <script src="js/data/repository/storage_repository.js"></script>
+    <!-- Panel Import -->
+    <script src="js/data/model/panel.js"></script>
+    <script src="js/data/repository/panel_repository.js"></script>
+    <script src="js/presentation/panel_view.js"></script>
+
+    <!-- Time import -->
     <script src="js/time.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/sleep_time.js"></script>
-    <script src="js/generate_panels.js"></script>
+    <script src="js/presentation/panel_view.js"></script>
     <script src="js/settings_menu.js"></script>
     <script src="src/config/panel_config.js"></script>
+
+    <!-- Main Import -->
+    <script src="js/main.js" defer></script>
 
 </body>
 
