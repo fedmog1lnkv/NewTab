@@ -2,14 +2,14 @@ function createPanelElement(panel) {
     const linkElement = document.createElement('a');
     linkElement.setAttribute('class', 'neu-btn');
     linkElement.setAttribute('href', panel.url);
-  
+
     const imgElement = document.createElement('img');
     imgElement.setAttribute('id', panel.id);
-    imgElement.setAttribute('src', panel.image);
+    imgElement.setAttribute('src', panel.icon);
     imgElement.setAttribute('alt', panel.name);
-  
+
     const textNode = document.createTextNode(panel.name);
-  
+
     linkElement.appendChild(imgElement);
     linkElement.appendChild(textNode);
     return linkElement;
