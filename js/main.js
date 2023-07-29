@@ -14,6 +14,10 @@ updateWeather();
 setInterval(updateWeather, 300000);
 startSleepTimer();
 
+const currentMonth = new Date().getMonth();
+const currentYear = new Date().getFullYear();
+generateCalendar(currentYear, currentMonth);
+
 const settingsButton = document.getElementById('settings-button');
 settingsButton.addEventListener('click', toggleSettingsMenu)
 
@@ -25,3 +29,12 @@ addPanelButton.addEventListener('click', addNewPanel)
 
 const closePanelPopupButton = document.getElementById('closePanelPopup');
 closePanelPopupButton.addEventListener('click', closePanelPopup);
+
+const temperatureDiv = document.getElementById('temperature');
+temperatureDiv.addEventListener('click', updateWeather);
+
+const calendarNextMonthButton = document.getElementById('nextMonth');
+calendarNextMonthButton.addEventListener('click', nextMonth);
+
+const calendarPrevMonthButton = document.getElementById('prevMonth');
+calendarPrevMonthButton.addEventListener('click', prevMonth);
