@@ -105,7 +105,7 @@
         <ul id="settings-menu" style="display: none;">
             <!--TODO : remove onclick-->
             <li id="addPanel"><i class="fas fa-plus"></i> Добавить</li>
-            <li onclick="openEditor()"><i class="fas fa-pencil-alt"></i> Редактор</li>
+            <li id="editor"><i class="fas fa-pencil-alt"></i> Редактор</li>
             <!-- TODO : make advanced settings-->
             <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
             <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
@@ -127,7 +127,8 @@
     <!-- Panel Import -->
     <script src="js/data/model/panel.js"></script>
     <script src="js/data/repository/panel_repository.js"></script>
-    <script src="js/presentation/panel_view.js"></script>
+    <script src="js/presentation/panel/panel_controller.js"></script>
+    <script src="js/presentation/panel/panel_view.js"></script>
 
     <!-- Time import -->
     <script src="js/time.js"></script>

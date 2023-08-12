@@ -18,6 +18,8 @@ class PanelRepository {
     return Date.now().toString(36) + Math.random().toString(36).substring(2, 5);
   }
 
+  //TODO: ADD SWAP
+
   async addPanel(name, image, url) {
     let imageUrl = image.trim();
     if (imageUrl == '') { 
@@ -61,12 +63,6 @@ class PanelRepository {
   subscribeToPanels(callback) {
     this.panelsSubscribers.push(callback);
     this.notifyPanelsSubscribers();
-  }
-
-  unsubscribeFromPanels(callback) {
-    this.panelsSubscribers = this.panelsSubscribers.filter(
-      (subscriber) => subscriber !== callback
-    );
   }
 
   notifyPanelsSubscribers() {
