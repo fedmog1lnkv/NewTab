@@ -22,12 +22,15 @@ function addNewPanel() {
     closePanelPopup();
 }
 
-function openEditor() {
-    // Ваш код для выполнения функции "Редактор"
+function enableEditor() {
+    if (PanelController.getInstance().getEditMode()) {
+        PanelController.getInstance().cancelEditModeChanges();
+    } else {
+        PanelController.getInstance().enterEditMode();
+    }
 }
 
 function uploadFile() {
-    // Ваш код для выполнения функции "Загрузить"
 }
 
 function downloadFile() {

@@ -38,3 +38,6 @@ calendarNextMonthButton.addEventListener('click', nextMonth);
 
 const calendarPrevMonthButton = document.getElementById('prevMonth');
 calendarPrevMonthButton.addEventListener('click', prevMonth);
+
+const editorButton = document.getElementById('editor');
+editorButton.addEventListener('click', enableEditor);
