@@ -33,13 +33,9 @@ function createPanelElement(panel, editMode) {
         ContextMenuHelper.getInstance().showMenu(e, menuItems);
     });
 
+    // disable href attribute
     if (!editMode) {
         linkElement.setAttribute('href', panel.url);
-    } else {
-        //TODO REMOVE THIS
-        linkElement.addEventListener('click', () => {
-            PanelRepository.getInstance().removePanel(panel.id);
-        });
     }
 
     const imgElement = document.createElement('img');
@@ -52,14 +48,21 @@ function createPanelElement(panel, editMode) {
     linkElement.appendChild(imgElement);
     linkElement.appendChild(textNode);
 
-    if(editMode) {
-        //TODO: ADD DELETE BUTTON
-        const deleteNode = document.createTextNode("ПИЗДА");
-        deleteNode.addEventListener('click', () => {
+    if (editMode) {
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+
+        deleteButton.addEventListener('click', () => {
             PanelRepository.getInstance().removePanel(panel.id);
         });
-        linkElement.appendChild(deleteNode);
+
+        linkElement.style.position = 'relative';
+
+        deleteButton.style.position = 'absolute';
+        linkElement.appendChild(deleteButton);
     }
+
 
     return linkElement;
 }

@@ -24,7 +24,7 @@ function generateCalendar(year, month) {
     let allDaysAdded = false;
 
     // Добавляем даты месяца
-    for (let i = 0; i < 42; i++) {
+    for (let i = 1; i < 42; i++) {
         const dateElement = document.createElement('button');
         dateElement.classList.add('date');
 

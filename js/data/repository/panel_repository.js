@@ -21,8 +21,12 @@ class PanelRepository {
   //TODO: ADD SWAP
 
   async addPanel(name, image, url) {
+    let imageUrl = image.trim();
+    if (imageUrl == '') { 
+      imageUrl = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}&sz=256`;
+    }
     const id = this.generateUniqueId();
-    const panel = new Panel(id, name, image, url);
+    const panel = new Panel(id, name, imageUrl, url);
     this.panels.push(panel);
     this.notifyPanelsSubscribers();
   }
