@@ -1,6 +1,14 @@
-function toggleSettingsMenu() {
-    const settingsMenu = document.getElementById('settings-menu');
-    settingsMenu.style.display = settingsMenu.style.display === 'none' ? 'block' : 'none';
+function toggleSettingsMenu(e) {
+    //TODO: move from html to context menu actions
+    e.stopPropagation();
+    const menuItems = [
+        { 
+            content: `Add panel`,
+            events:
+            { click: e => addNewPanel() } 
+        },
+    ];
+    ContextMenuHelper.getInstance().showMenu(e, menuItems);
 }
 
 function createPanel() {
