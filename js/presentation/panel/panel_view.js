@@ -8,21 +8,44 @@ function createPanelElement(panel, editMode) {
     const linkElement = document.createElement('a');
     linkElement.setAttribute('class', 'neu-btn');
 
-    //TODO: Add actions
     const menuItems = [{
-            content: `${copyIcon}Copy`,
+            content: `${copyIcon}Copy URL`,
             events: {
-                click: e => console.log(e, "Copy Button Click")
+                click: e => {
+                    let url = panel.url;
+                    navigator.clipboard.writeText(url)
+                        .then(() => {
+
+                        })
+                        .catch(err => {
+                            console.log('Something went wrong', err);
+                        });
+                }
             }
         },
         {
-            content: `${editIcon}Edit`
+            content: `${editIcon}Edit`,
+            events: {
+                click: e => {
+                    // TODO : make an editor
+                }
+            }
         },
         {
-            content: `${moveForwardIcon}Move Forward`
+            content: `${moveForwardIcon}Move Forward`,
+            events: {
+                click: e => {
+                    PanelRepository.getInstance().moveForwardPanel(panel.id);
+                }
+            }
         },
         {
-            content: `${moveBackwardIcon}Move Backward`
+            content: `${moveBackwardIcon}Move Backward`,
+            events: {
+                click: e => {
+                    PanelRepository.getInstance().moveBackwardPanel(panel.id);
+                }
+            }
         },
         {
             content: `${deleteIcon}Delete`,

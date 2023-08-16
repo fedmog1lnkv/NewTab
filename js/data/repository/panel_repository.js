@@ -22,12 +22,52 @@ class PanelRepository {
 
   async addPanel(name, image, url) {
     let imageUrl = image.trim();
-    if (imageUrl == '') { 
+    if (imageUrl == '') {
       imageUrl = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}&sz=256`;
     }
     const id = this.generateUniqueId();
     const panel = new Panel(id, name, imageUrl, url);
     this.panels.push(panel);
+    this.notifyPanelsSubscribers();
+  }
+
+  async moveForwardPanel(id) {
+    const panelIndex = this.panels.findIndex((panel) => panel.id === id);
+    console.log(`move forward panel ${panelIndex}`);
+
+    if (panelIndex === -1) {
+      throw new Error('Panel not found');
+    }
+
+    if (panelIndex === 0) {
+      console.log(`Panel is already at the front, no need to move`);
+      return;
+    }
+
+    [this.panels[panelIndex - 1], this.panels[panelIndex]] = [this.panels[panelIndex], this.panels[panelIndex - 1]];
+    console.log(`Panel moved forward. New panels array:`);
+    console.log(this.panels);
+
+    this.notifyPanelsSubscribers();
+  }
+
+  async moveBackwardPanel(id) {
+    const panelIndex = this.panels.findIndex((panel) => panel.id === id);
+    console.log(`move backward panel ${panelIndex}`);
+
+    if (panelIndex === -1) {
+      throw new Error('Panel not found');
+    }
+
+    if (panelIndex === this.panels.length - 1) {
+      console.log(`Panel is already at the back, no need to move`);
+      return;
+    }
+
+    [this.panels[panelIndex + 1], this.panels[panelIndex]] = [this.panels[panelIndex], this.panels[panelIndex + 1]];
+    console.log(`Panel moved backward. New panels array:`);
+    console.log(this.panels);
+
     this.notifyPanelsSubscribers();
   }
 
@@ -38,7 +78,7 @@ class PanelRepository {
 
   async confirmPanels() {
     const serializedPanels = this.panels.map((panel) => JSON.stringify(panel));
-    return this.chromeRepository.saveData(StorageRepository.KEY_PANELS, "["+serializedPanels+"]");
+    return this.chromeRepository.saveData(StorageRepository.KEY_PANELS, "[" + serializedPanels + "]");
   }
 
   async cancelPanels() {
@@ -51,12 +91,12 @@ class PanelRepository {
 
     console.log(serializedPanels);
 
-    const panelsArray = JSON.parse(serializedPanels) ?? [];
-  
+    const panelsArray = JSON.parse(serializedPanels) !== null ? JSON.parse(serializedPanels) : [];
+
     this.panels = panelsArray;
-  
+
     this.notifyPanelsSubscribers();
-  
+
     return this.panels;
   }
 
