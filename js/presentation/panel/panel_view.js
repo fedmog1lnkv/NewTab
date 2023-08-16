@@ -36,6 +36,7 @@ function createPanelElement(panel, editMode) {
             events: {
                 click: e => {
                     PanelRepository.getInstance().moveForwardPanel(panel.id);
+                    PanelRepository.getInstance().confirmPanels();
                 }
             }
         },
@@ -44,6 +45,7 @@ function createPanelElement(panel, editMode) {
             events: {
                 click: e => {
                     PanelRepository.getInstance().moveBackwardPanel(panel.id);
+                    PanelRepository.getInstance().confirmPanels();
                 }
             }
         },
