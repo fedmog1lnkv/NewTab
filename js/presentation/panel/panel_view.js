@@ -62,7 +62,6 @@ function createPanelElement(panel, editMode) {
     ];
 
     linkElement.addEventListener("contextmenu", e => {
-        e.preventDefault();
         ContextMenuHelper.getInstance().showMenu(e, menuItems);
     });
 
