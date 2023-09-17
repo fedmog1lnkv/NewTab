@@ -8,6 +8,7 @@ function preloadAnimations() {
 }
 
 preloadAnimations();
+setWallpaper();
 updateTime();
 setInterval(updateTime, 1000);
 updateWeather();

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/context_menu.css">
     <link rel="stylesheet" href="css/create_panel_popup.css">
+    <link rel="stylesheet" href="css/change_wallpaper_popup.css">
     <link rel="stylesheet" href="css/sleep_clock.css">
     <link rel="stylesheet" href="css/calendar.css">
 
@@ -99,24 +100,6 @@
             <div id="links"></div>
         </div>
 
-
-
-        <!-- Кнопка настроек -->
-        <div id="settings-button">
-            <i class="fas fa-cog"></i>
-        </div>
-
-        <!-- Всплывающее меню настроек -->
-        <ul id="settings-menu" style="display: none;">
-            <!--TODO : remove onclick-->
-            <li id="addPanel"><i class="fas fa-plus"></i> Добавить</li>
-            <li id="editor"><i class="fas fa-pencil-alt"></i> Редактор</li>
-            <!-- TODO : make advanced settings-->
-            <li onclick="uploadFile()"><i class="fas fa-file-upload"></i> Загрузить</li>
-            <li onclick="downloadFile()"><i class="fas fa-file-download"></i> Скачать</li>
-            <!-- Добавьте другие пункты меню, если необходимо -->
-        </ul>
-
         <div id="add-panel-popup">
             <h2>Add Panel</h2>
             <input type="text" id="panelNameInput" placeholder="Panel Name">
@@ -124,6 +107,13 @@
             <input type="text" id="panelUrlInput" placeholder="Panel URL">
             <button id="addNewPanel">Add</button>
             <button id="closePanelPopup">Cancel</button>
+        </div>
+
+        <div id="wallpaper-change-popup">
+            <h2>Change Background Video</h2>
+            <input type="text" id="wallpaperUrlInput" placeholder="Video URL">
+            <button id="changeWallpaper">Change</button>
+            <button id="closeWallpaperChangePopup">Cancel</button>
         </div>
     </div>
 
