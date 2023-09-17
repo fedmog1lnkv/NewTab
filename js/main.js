@@ -18,8 +18,7 @@ const currentMonth = new Date().getMonth();
 const currentYear = new Date().getFullYear();
 generateCalendar(currentYear, currentMonth);
 
-const settingsButton = document.getElementById('settings-button');
-settingsButton.addEventListener('click', toggleSettingsMenu)
+document.addEventListener("contextmenu", showSettingsMenu);
 
 const openAddPanelButton = document.getElementById('addPanel');
 openAddPanelButton.addEventListener('click', createPanel)

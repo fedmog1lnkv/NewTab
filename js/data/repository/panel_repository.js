@@ -18,8 +18,6 @@ class PanelRepository {
     return Date.now().toString(36) + Math.random().toString(36).substring(2, 5);
   }
 
-  //TODO: ADD SWAP
-
   async addPanel(name, image, url) {
     let imageUrl = image.trim();
     if (imageUrl == '') {

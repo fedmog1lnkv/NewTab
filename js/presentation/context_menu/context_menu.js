@@ -26,7 +26,6 @@ class ContextMenu {
 
     init() {
         const contextMenu = this.renderMenu();
-        this.event.preventDefault();
         const { clientX, clientY } = this.event;
         document.body.appendChild(contextMenu);
 
@@ -112,6 +111,8 @@ class ContextMenuHelper {
     }
 
     showMenu(event, menuItems) {
+        event.preventDefault();
+        event.stopPropagation();
         this.closeMenus();
         this.menus.push(new ContextMenu(menuItems, 'light', event));
     }

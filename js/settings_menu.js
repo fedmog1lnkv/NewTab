@@ -1,6 +1,5 @@
-function toggleSettingsMenu(e) {
-    //TODO: move from html to context menu actions
-    e.stopPropagation();
+function showSettingsMenu(e) {
+    //TODO: Add actions for main context menu
     const menuItems = [
         { 
             content: `Add panel`,
